@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import { FormEvent, useContext, useState } from "react";
 import { AuthContext } from "../context/AuthContext";
 import styles from "../styles/Home.module.css";
+import { withSSRGuest } from "../utils/withSSRGuest";
 
 const Home: NextPage = () => {
   const [email, setEmail] = useState("");
@@ -37,3 +38,9 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+export const getServerSideProps = withSSRGuest(async (ctx) => {
+  return {
+    props: {},
+  };
+});
