@@ -6,7 +6,7 @@ import { useCan } from "../hooks/useCan";
 import { withSSRAuth } from "../utils/withSSRAuth";
 
 export default function Dashboard() {
-  const { user } = useContext(AuthContext);
+  const { user, signOut } = useContext(AuthContext);
 
   const userCanSeeMetrics = useCan({
     roles: ["administrator", "editor"],
@@ -16,6 +16,7 @@ export default function Dashboard() {
     <>
       <h1>Dashboard: {user?.email}</h1>
       <Can permissions={["metrics.list"]}>Métricas</Can>
+      <button onClick={signOut}>Sign out</button>
     </>
   );
 }
