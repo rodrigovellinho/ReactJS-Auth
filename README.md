@@ -1,34 +1,60 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h3 align="center">
+  Bootcamp Ignite Rocketseat - Projeto de estudo de autenticação, autorização e refresh token
+</h3>
 
-## Getting Started
+## :rocket: Sobre o desafio
+Projeto desenvolvido estudando como criar um processo completo de autenticação, autorização e refresh token dentro do React com Next.js, permitindo controlar o acesso à rotas e componentes tanto no client-side quanto no server-side.
 
-First, run the development server:
+
+## 💻 Anotações
+JWT (JSON Web Token) é armazenado no sessionStorage, localStorage, ou cookies. Refresh Token é armazenado junto, e também normalmente no banco de dados do back end.
+ - sessionStorage: é limpado ao fechar o navegador e abrir novamente;
+ - localStorage: se mantém ao fechar ao fechar o navegador, reiniciar a máquina, etc; só existe no browser, o servidor não tem acesso, portando por exemplo se é usado Next.js já não da para utilizar;
+ - cookies: pode ser acessado tanto no browser quanto no servidor;
+ - BroadcastChannel: API utilizada para permitir a comunicação entre diferentes documentos (em diferentes janelas, abas, frames ou iframes) da mesma origem, no caso desta aplicação, para realizar o logout e login automático.
+
+## :wrench: Instalação e uso
 
 ```bash
-npm run dev
-# or
-yarn dev
+# Abra um terminal e clone este repositório com o comando
+
+$ git clone https://github.com/rodrigovellinho/ReactJS-Auth.git
+
+# Acesse a pasta da aplicação
+
+$ cd ignite-reactjs-nextauth
+
+# Instale as dependências
+
+$ yarn
+
+# Clone o projeto do back end para realização do login e autenticações
+
+$ git clone https://github.com/rocketseat-education/ignite-reactjs-auth-backend.git
+
+# Acesse a pasta da aplicação
+
+$ cd ignite-reactjs-auth-backend
+
+# Instale suas dependências
+
+$ yarn
+
+# Pode iniciar ambas aplicações, back e front
+
+$ yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🔨 Tecnologias:
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+- **[Next.js](https://nextjs.org/)**
+- **[TypeScript](https://www.typescriptlang.org/)**
+- **[ReactJS](https://reactjs.org/)**
+- **[Axios](https://github.com/axios/axios)**
+- **[Nookies](https://github.com/maticzav/nookies)**
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+---
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Feito por [Rodrigo Kloeckner](https://github.com/rodrigovellinho)
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
